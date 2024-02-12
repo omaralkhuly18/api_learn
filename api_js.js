@@ -12,8 +12,8 @@ function GetPosts() {
                 document.getElementById("content").innerHTML += `
                 <tr>
                 <td id="content_post_num">${post.id}</td>
-                <td id="content_post_body">${post.body}</td>
                 <td id="content_post_title">${post.title}</td>
+                <td id="content_post_body">${post.body}</td>
                 </tr>
                 `;
                 console.log(post.userId)
