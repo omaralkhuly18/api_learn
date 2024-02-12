@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.142);
+}
+
+#content {
+    margin: 0 45px;
+    width: 85%;
+    border: 10px solid whitesmoke;
+    cursor: pointer;
+}
+
+td:not(:first-child) {
+    font-size: 19px;
+    font-family: sans-serif;
+    padding: 1.5%;
+    transition: 0.5s;
+}
+
+#content_post_body {
+    background-color: rgba(255, 255, 255, 0.444);
+    color: rgb(43, 255, 0);
+    border: 2px solid yellow;
+}
+
+#content_post_body:hover {
+    background-color: rgba(240, 248, 255, 0.641);
+    color: blueviolet;
+}
+
+#content_post_title {
+    background-color: rgba(240, 248, 255, 0.641);
+    color: blueviolet;
+    border: 2px solid rgba(255, 255, 0, 0.682);
+}
+
+#content_post_title:hover {
+    background-color: rgba(255, 255, 255, 0.444);
+    color: rgb(43, 255, 0);
+}
+
+#content_post_num {
+    background-color: rgba(25, 141, 243, 0.641);
+    color: blueviolet;
+    text-align: center;
+    font-size: 25px !important;
+    font-weight: bolder;
+    border: 2px solid rgba(255, 255, 0, 0.682);
+}
+
+#content_post_num:hover {
+    background-color: rgba(105, 87, 87, 0.444);
+    color: rgb(104, 109, 209);
+}
+
+th {
+    font-size: 20px;
+    height: 35px;
+    font-family: sans-serif;
+
+}
+
+.content_bod {
+    background-color: floralwhite;
+    color: seagreen;
+}
+
+.content_tit {
+    background-color: cadetblue;
+    color: rgba(0, 0, 255, 0.667);
+}
+
+.content_num {
+    background-color: cadetblue;
+    color: rgba(0, 0, 255, 0.667);
+}
