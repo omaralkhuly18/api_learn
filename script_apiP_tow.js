@@ -3,7 +3,7 @@ function GetPosts(userId) {
     // Create an object from the basic class in the form of arrays in the API
     let newRequest = new XMLHttpRequest();
 
-    newRequest.open("GET", "https://jsonplaceholder.typicode.com/posts?userId="+userId);
+    newRequest.open("GET", "https://jsonplaceholder.typicode.com/posts?userId=" + userId);
     // Convert output type from objects to string
     newRequest.responseType = "json"
     newRequest.send();
@@ -15,7 +15,7 @@ function GetPosts(userId) {
             // Empty items of their original content
             document.getElementById("posts").innerHTML = "";
             for (post of posts) {
-                
+
                 let content = `
                 
                 <div class="hesder_posts">
@@ -23,8 +23,8 @@ function GetPosts(userId) {
                         <h6>${post.body}</h6>
                 </div>`
                 document.getElementById("posts").innerHTML += content;
-            
-        }
+
+            }
         } else {
             alert("The operation was not completed");
         }
@@ -51,11 +51,13 @@ function GetUsers() {
             for (user of users) {
                 let content = `
                 <div id="button_user" onclick="userClicked(${user.id} , this)">
-                    <h3>${user.name}</h3>
-                    <h3>${user.email}</h3>
+                    <a href="#posts">
+                            <h3>${user.name}</h3>
+                            <h3>${user.email}</h3>
+                    </a>
                 </div>`
                 document.getElementById("users").innerHTML += content;
-        }
+            }
         } else {
             alert("The operation was not completed");
         }
@@ -64,11 +66,11 @@ function GetUsers() {
 // create function get of all users end
 
 // create function click on only user to get One user's post start
-function userClicked(id , el){
+function userClicked(id, el) {
     GetPosts(id);
 
     var selectedElements = document.getElementsByClassName("selected");
-    for(element of selectedElements){
+    for (element of selectedElements) {
         element.classList.remove("selected");
     }
 
