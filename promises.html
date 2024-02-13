@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promises</title>
+    <style>
+        body {
+            background-color: #6967674a;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            width: 80%;
+            height: 200px;
+            font-family: sans-serif;
+        }
+
+        img {
+            display: none;
+            width: 25%;
+            border-radius: 20px;
+            position: absolute;
+            height: 100%;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            background-color: rgb(139, 178, 210);
+            width: 20%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bolder;
+            color: blue;
+            cursor: pointer;
+            margin: 0 auto 1%;
+
+        }
+
+        .display_none {
+            display: none;
+            position: absolute;
+           
+            width: 100%;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            background-color: rgb(139, 178, 210);
+            width: 20%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bolder;
+            color: blue;
+            margin: 1% auto;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="sumbitImgOne()">block</button>
+    <img id="title1" src="banner-04.jpg" alt="banner1">
+    <img id="title2" style=" margin: 0% 30%; " src="banner-04.jpg" alt="banner2">
+    <img id="title3" style=" margin: 0% 60%; " src="banner-04.jpg" alt="banner3">
+    <img id="title4" style=" margin: 0% 90%; " src="banner-04.jpg" alt="banner4">
+    <div class="display_none" id="title5">
+        <a  href="#" onclick="sumbitImgTow()">none</a>
+    </div>
+</body>
+
+<script>
+    function sumbitImgOne() {
+        let promises = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                document.getElementById("title1").style.display = "block";
+                resolve();
+            }, 1000);
+        });
+
+        promises.then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    document.getElementById("title2").style.display = "block";
+                    resolve();
+                }, 1000);
+            });
+        }).then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    document.getElementById("title3").style.display = "block";
+                    resolve();
+                }, 1000);
+            });
+        }).then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    document.getElementById("title4").style.display = "block";
+                    resolve();
+                }, 1000);
+            });
+        }).then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    document.getElementById("title5").style.display = "block";
+                    document.getElementById("title5").style.top = "145%";
+                    resolve();
+                }, 200);
+            });
+        });
+    }
+
+    function sumbitImgTow() {
+        let promises = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                document.getElementById("title1").style.display = "none";
+                resolve();
+            }, 500);
+        });
+
+        promises.then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    document.getElementById("title2").style.display = "none";
+                    resolve();
+                }, 500);
+            });
+        }).then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    document.getElementById("title3").style.display = "none";
+                    resolve();
+                }, 500);
+            });
+        }).then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    document.getElementById("title4").style.display = "none";
+                    resolve();
+                }, 500);
+            });
+        }).then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    document.getElementById("title5").style.display = "none";
+                    resolve();
+                }, 200);
+            });
+        });
+    }
+    // setTimeout(() => {
+    //     document.getElementById("title1").style.display = "block";
+    //     setTimeout(() => {
+    //         document.getElementById("title2").style.display = "block";
+    //         setTimeout(() => {
+    //             document.getElementById("title3").style.display = "block";
+    //             setTimeout(() => {
+    //                 document.getElementById("title4").style.display = "block";
+    //             }, 2000);
+    //         }, 2000);
+    //     }, 2000);
+    // }, 2000);
+</script>
+
+</html>

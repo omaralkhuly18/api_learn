@@ -1,13 +1,164 @@
-body {
+body{
     margin: 0;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0.142);
+    font-family: sans-serif;
+    background-color: rgba(0, 0, 139, 0.138);
+    overflow: visible;
 }
 
-.buttons-container {
-    margin-bottom: 20px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin: 0;
+    padding: 0;
 }
 
-button {
-    margin-right: 10px;
+a{
+    text-decoration: 0;
+}
+
+#content{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+}
+
+.contaner_users{
+    width: 30%;
+    height: 100%;
+    background-color: rgb(84, 84, 196);
+    border-right: 6px solid white;
+}
+
+#button_user {
+    padding: 2% 5%;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 0px 17px 6px rgba(255, 255, 0, 0.259);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.users,
+.posts{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.users{
+    margin: 4% auto;
+}
+
+.users .selected{
+    border: solid 6px #ff6200;
+    background-color: #5454c425 !important;
+
+}
+
+.users a{
+    color: #0e0e0e;
+}
+
+.posts{
+    width: 95% !important;
+    padding: 3% 2%;
+}
+
+.contaner_posts{
+    width: 70%;
+    height: 100%;
+    background-color: rgba(95, 158, 160, 0.492);
+}
+
+.hesder_posts {
+    padding: 1%;
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0px 0px 17px 6px rgba(255, 255, 0, 0.259);
+    border-radius: 10px;
+    line-height: 25px;
+}
+
+.hesder_posts h5{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.337);
+}
+
+.hesder_posts h6{
+    font-size: 15px;
+}
+
+@media screen and (max-width: 1040px) and (min-width: 890px) {
+    .contaner_users{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 890px) and (min-width: 750px) {
+    .contaner_users{
+        width: 45%;
+    }
+    .users{
+        width: 95% !important;
+    }
+}
+
+@media screen and (max-width: 750px) and (min-width: 650px) {
+    .contaner_users{
+        width: 45%;
+    }
+    .users{
+        width: 95% !important;
+    }
+    #button_user{
+        margin: 2% 3% !important;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 650px) and (min-width: 450px){
+    #content{
+        display: block;
+    }
+
+    .contaner_users,
+    .contaner_posts{
+        width: 100%;
+    }
+
+    .users{
+        padding: 1% 0;
+        margin: 0 auto !important;
+    }
+}
+
+@media screen and (max-width: 450px) and (min-width: 230px){
+    #content{
+        display: block;
+    }
+
+    .contaner_users,
+    .contaner_posts{
+        width: 100%;
+    }
+
+    .users{
+        padding: 1% 0;
+        margin: 0 !important;
+    }
+
+    .posts{
+        margin: 0 !important;
+    }
+
+    #button_user,
+    .hesder_posts{
+        width: 100%;
+        font-size: 11px;
+    }
 }
