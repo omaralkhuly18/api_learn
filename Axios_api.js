@@ -130,7 +130,6 @@ getUsersUsingAxios()
 // create function click on only user to get One user's post start
 function userClicked(id, el) {
     getPostsOfUser(id);
-
     var selectedElements = document.getElementsByClassName("selected");
     for (element of selectedElements) {
         element.classList.remove("selected");
