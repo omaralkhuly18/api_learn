@@ -1,42 +1,50 @@
 let cities = [
     " إختار إسم المدينه/المحافظه/الولايه ",
-    " القاهره ",
-    " الإسكندريه ",
-    " البحر الأحمر",
-    " دمياط ",
     " الدقهلية ",
+    " البحر الأحمر ",
     " البحيرة ",
     " الفيوم ",
-    " الغربية ",
+    "الغربية",
+    " الإسكندريه ",
     " الإسماعيلية ",
     " الجيزة ",
     " المنُوفيّة ",
+    " المنيا ",
+    " القاهره ",
     " القليوبية ",
     " الأقصر ",
+    " الوادي الجديد ",
     " السويس ",
     " الشرقية ",
     " أسوان ",
     " أسيوط ",
     " بني سويف ",
     " بورسعيد ",
+    " دمياط ",
+    " جنوب سيناء ",
     "  كفر الشيخ ",
-    " سوهاج ",
+    " مطروح ",
+    " قنا ",
+    " شمال سيناء ",
+    " سوهاج "
 ];
-const citiesSelect = document.getElementById("cities_selected");
+document.getElementById("cities_selected");
 
 for (let city of cities) {
-    const option = document.createElement("option");
-    option.setAttribute("id", "translated-text");
-    option.textContent = city;
-    citiesSelect.appendChild(option);
+    const contact = `
+    <option>${city}</optiion>
+    `
+    document.getElementById("cities_selected").innerHTML += contact;
 }
 
-citiesSelect.addEventListener('change', (event) => {
-    const selectedCity = event.target.value;
-    document.getElementById("name_city").innerText = selectedCity;
-    if(selectedCity.value == "القاهره"){
-        getPrayersTimngsOfCity("cairo")
+document.getElementById("cities_selected").addEventListener('change', () => {
+    
+    if(this.value == "الدقهلية"){
+        getPrayersTimngsOfCity("Dakahlia")
+    }else if(this.value == "البحر الأحمر"){
+        getPrayersTimngsOfCity("BA")
     }
+    console.log(this.value)
 });
 
 
@@ -67,7 +75,7 @@ function getPrayersTimngsOfCity(cityName) {
             console.log(error);
         });
 }
-getPrayersTimngsOfCity("C");
+getPrayersTimngsOfCity("Dakahlia");
 
 function fillTimeForPrayer(id, time) {
     document.getElementById(id).innerHTML = time;
