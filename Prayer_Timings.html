@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Timings</title>
+    <link rel="stylesheet" href="Prayer_Timings_style.css">
+    <link rel="shortcut icon" href="api_logo_image_none.png" type="image/x-icon">
+</head>
+
+<body>
+    <h1 class="title">مواقيت الصلاة</h1>
+    <div id="prayer-times">
+        <img src="api_logo_image_none.png" alt="">
+        <h2 class="title_city" id="name_city">
+            القاهره
+        </h2>
+
+        <div class="body_contaner">
+            <h3 class="title_data" id="newDate">
+                اللأربعاء -2024/2/14
+            </h3>
+
+            <div class="Timings">
+                <div class="sections">
+                    <div class="section">
+                        <p class="prayers">
+                            الفجر
+                        </p>
+                        <h6 class="time" id="Fajr_time">
+                            ٥:٠٩ ص
+                        </h6>
+                    </div>
+
+                    <div class="section">
+                        <p class="prayers">
+                            الشروق
+                        </p>
+                        <h6 class="time" id="Sunrise_time">
+                            ٦:٣٦ ص
+                        </h6>
+                    </div>
+
+                    <div class="section">
+                        <p class="prayers">
+                            الظُّهْر
+                        </p>
+                        <h6 class="time" id="Dhuhr_time">
+                            ١٢:٠٩ م
+                        </h6>
+                    </div>
+
+                    <div class="section">
+                        <p class="prayers">
+                            العَصر
+                        </p>
+                        <h6 class="time" id="Asr_time">
+                            ٣:١٨ م
+                        </h6>
+                    </div>
+
+                    <div class="section">
+                        <p class="prayers">
+                            المَغرب
+                        </p>
+                        <h6 class="time" id="Maghrib_time">
+                            ٥:٤٢ م
+                        </h6>
+                    </div>
+
+                    <div class="section">
+                        <p class="prayers">
+                            العِشاء
+                        </p>
+                        <h6 class="time" id="Isha_time">
+                            ٧:٠١ م
+                        </h6>
+                    </div>
+                </div>
+                <div class="choose_name_city">
+                    <select id="cities_selected">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <img src="api_logo_image_none.png" alt="" style="float: left;">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Prayer_Timings.js"></script>
+</body>
+
+</html>
