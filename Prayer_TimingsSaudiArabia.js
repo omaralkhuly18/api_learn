@@ -39,7 +39,7 @@ document.getElementById("cities_selected").addEventListener('change', function()
 
 function getPrayersTimingsOfCity(cityName) {
     let params = {
-        country: "EG",
+        country: "SA",
         city: cityName
     };
     axios.get('http://api.aladhan.com/v1/timingsByCity', {
@@ -71,4 +71,3 @@ getPrayersTimingsOfCity(" القاهرة ");
 function fillTimeForPrayer(id, time) {
     document.getElementById(id).innerHTML = time;
 }
-

@@ -1,0 +1,89 @@
+{
+    "data": {
+        "timings": {
+            "Fajr": "05:08",
+            "Sunrise": "06:35",
+            "Dhuhr": "12:09",
+            "Asr": "15:18",
+            "Sunset": "17:43",
+            "Maghrib": "17:43",
+            "Isha": "19:01",
+            "Imsak": "04:58",
+            "Midnight": "00:09",
+            "Firstthird": "22:00",
+            "Lastthird": "02:18"
+        },
+        "date": {
+            "readable": "15 Feb 2024",
+            "timestamp": "1707973200",
+            "hijri": {
+                "date": "05-08-1445",
+                "format": "DD-MM-YYYY",
+                "day": "05",
+                "weekday": {
+                    "en": "Al Khamees",
+                    "ar": "الخميس"
+                },
+                "month": {
+                    "number": 8,
+                    "en": "Shaʿbān",
+                    "ar": "شَعْبان"
+                },
+                "year": "1445",
+                "designation": {
+                    "abbreviated": "AH",
+                    "expanded": "Anno Hegirae"
+                },
+                "holidays": []
+            },
+            "gregorian": {
+                "date": "15-02-2024",
+                "format": "DD-MM-YYYY",
+                "day": "15",
+                "weekday": {
+                    "en": "Thursday"
+                },
+                "month": {
+                    "number": 2,
+                    "en": "February"
+                },
+                "year": "2024",
+                "designation": {
+                    "abbreviated": "AD",
+                    "expanded": "Anno Domini"
+                }
+            }
+        },
+        "meta": {
+            "latitude": 30.079694,
+            "longitude": 31.323437,
+            "timezone": "Africa/Cairo",
+            "method": {
+                "id": 5,
+                "name": "Egyptian General Authority of Survey",
+                "params": {
+                    "Fajr": 19.5,
+                    "Isha": 17.5
+                },
+                "location": {
+                    "latitude": 30.0444196,
+                    "longitude": 31.2357116
+                }
+            },
+            "latitudeAdjustmentMethod": "ANGLE_BASED",
+            "midnightMode": "STANDARD",
+            "school": "STANDARD",
+            "offset": {
+                "Imsak": 0,
+                "Fajr": 0,
+                "Sunrise": 0,
+                "Dhuhr": 0,
+                "Asr": 0,
+                "Maghrib": 0,
+                "Sunset": 0,
+                "Isha": 0,
+                "Midnight": 0
+            }
+        }
+    }
+}
