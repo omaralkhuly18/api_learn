@@ -1,5 +1,5 @@
 // function getPrayersTimingsOfCity(city) {
-   
+
 //     const params = {
 //         city: city
 //     };
@@ -8,7 +8,7 @@
 //         params: params
 //     })
 //     .then(response => {
-     
+
 //         // console.log(response.data.data['0']['cities']);
 //         // console.log(response.data.data[0]['id']);
 
@@ -17,10 +17,10 @@
 //         const selectElement = document.getElementById('cities_selected');
 //         const countryNameElement = document.getElementById('name_city');
 //         countryNameElement.textContent = Country;
-        
+
 //         selectElement.innerHTML = '';
 
-        
+
 //         cities.forEach(city => {
 //             const option = document.createElement('option');
 //             option.text = city.name;
@@ -29,7 +29,7 @@
 //         });
 //     })
 //     .catch(error => {
-  
+
 //         console.error('حدث خطأ في الاستجابة:', error);
 //     });
 // }
@@ -67,7 +67,7 @@ for (let city in cities) {
     }
 }
 
-document.getElementById("cities_selected").addEventListener('change', function() {
+document.getElementById("cities_selected").addEventListener('change', function () {
     const selectedCity = this.value.trim();
     document.getElementById("name_city").innerHTML = selectedCity;
     if (selectedCity in cities) {
@@ -80,27 +80,30 @@ function getPrayersTimingsOfCity(cityName) {
         country: "SA",
         city: cityName
     };
-    axios.get('http://api.aladhan.com/v1/timingsByCity', {
+    const headers = {
+        "Content-Type": "application/json",
+    };
+    axios.get('https://api.aladhan.com/v1/timingsByCity', {
         params: params
     })
-    .then(function (response) {
-        const timings = response.data.data.timings;
+        .then(function (response) {
+            const timings = response.data.data.timings;
 
-        fillTimeForPrayer("Fajr_time", timings.Fajr);
-        fillTimeForPrayer("Sunrise_time", timings.Sunrise);
-        fillTimeForPrayer("Dhuhr_time", timings.Dhuhr);
-        fillTimeForPrayer("Asr_time", timings.Asr);
-        fillTimeForPrayer("Maghrib_time", timings.Maghrib);
-        fillTimeForPrayer("Isha_time", timings.Isha);
+            fillTimeForPrayer("Fajr_time", timings.Fajr);
+            fillTimeForPrayer("Sunrise_time", timings.Sunrise);
+            fillTimeForPrayer("Dhuhr_time", timings.Dhuhr);
+            fillTimeForPrayer("Asr_time", timings.Asr);
+            fillTimeForPrayer("Maghrib_time", timings.Maghrib);
+            fillTimeForPrayer("Isha_time", timings.Isha);
 
-        const readableDate = response.data.data.date.readable;
-        const weekDay = response.data.data.date.hijri.weekday.ar;
-        const date = weekDay + " " + readableDate;
-        document.getElementById("newDate").innerHTML = date;
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
+            const readableDate = response.data.data.date.readable;
+            const weekDay = response.data.data.date.hijri.weekday.ar;
+            const date = weekDay + " " + readableDate;
+            document.getElementById("newDate").innerHTML = date;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
 
 // Initial call with a default city
