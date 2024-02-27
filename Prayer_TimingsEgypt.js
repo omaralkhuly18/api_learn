@@ -82,7 +82,7 @@ function getPrayersTimingsOfCity(cityName) {
     };
     const headers = {
         "Content-Type": "application/json",
-    };
+      };
     axios.get('https://api.aladhan.com/v1/timingsByCity', {
         params: params
     })
