@@ -80,7 +80,7 @@ function getPrayersTimingsOfCity(cityName) {
         country: "SA",
         city: cityName
     };
-    axios.get('http://api.aladhan.com/v1/timingsByCity', {
+    axios.get('https://api.aladhan.com/v1/timingsByCity', {
         params: params
     })
     .then(function (response) {
