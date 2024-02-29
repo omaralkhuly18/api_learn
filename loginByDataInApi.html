@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tokenAndauthStyle.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="nav_logo">CodingLab</a>
+
+            <ul class="nav_items">
+                <li class="nav_item">
+                    <a href="awaitAndasync.html" class="nav_link">Api-lesrn1</a>
+                    <a href="api_test_withYoutub.html" class="nav_link">Api-lesrn2</a>
+                    <a href="api_request.html" class="nav_link">Api-lesrn3</a>
+                    <a href="Prayer_Timings.html" class="nav_link">Api-lesrn4</a>
+                    <a href="promises.html" class="nav_link">Api-lesrn5</a>
+                </li>
+            </ul>
+
+            <button class="button" id="form-open">Login</button>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="home">
+        <div class="form_container">
+            <i class="uil uil-times form_close"></i>
+            <!-- Login From -->
+            <div class="form login_form">
+                <form action="">
+                    <h2>Login</h2>
+
+                    <div class="input_box">
+                        <input type="email" id="email_login" placeholder="Enter your email" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="password_login" placeholder="Enter your password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+
+                    <div class="option_field">
+                        <span class="checkbox">
+                            <input type="checkbox" id="check" />
+                            <label for="check">Remember me</label>
+                        </span>
+                        <a href="#" class="forgot_pw">Forgot password?</a>
+                    </div>
+
+                    <button class="button" id="button_login">Login Now</button>
+
+                    <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+                </form>
+                <p id="error-msg" class="error-message"></p>
+            </div>
+
+            <!-- Signup From -->
+            <div class="form signup_form">
+                <form action="#">
+                    <h2>Signup</h2>
+
+                    <div class="input_box">
+                        <input type="email" id="email_signup" placeholder="Enter your email" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="password1_signup" placeholder="Create password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" id="password2_signup" placeholder="Confirm password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+
+                    <button class="button" id="button_sin">Signup Now</button>
+
+                    <div class="signup_login">Already have an account? <a href="#" id="login">Login</a></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        const formOpenBtn = document.querySelector("#form-open"),
+            formCloseBtn = document.querySelector(".form_close"),
+            home = document.querySelector(".home"),
+            signupBtn = document.querySelector("#signup"),
+            loginBtn = document.querySelector("#login"),
+            formContainer = document.querySelector(".form_container"),
+            pwShowHide = document.querySelectorAll(".pw_hide"),
+            emailLogin = document.getElementById("email_login").value, //emnail login
+            passwordLogin = document.getElementById("password_login").value, //pass login
+            emailSignUp = document.getElementById("email_signup").value, //emnail SignUp
+            password1SignUp = document.getElementById("password1_signup").value, //pass1 SignUp
+            password2SignUp = document.getElementById("password2_signup").value; //pass2 SignUp
+
+        // function login(event) {
+        //     event.preventDefault();
+        //     const  emailLogin = document.getElementById("email_login"),
+        //     passwordLogin = document.getElementById("password_login"),
+        //     errorMsg = document.getElementById('error-msg');
+
+
+        // }
+
+        // const validateEmail = (inputEmail) => inputEmail.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        // const validatePassword = (inputPassword) => inputPassword.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+
+        formOpenBtn.addEventListener("click", () => home.classList.add("show"));
+        formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
+
+        signupBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            formContainer.classList.add("active");
+        });
+        loginBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            formContainer.classList.remove("active");
+        });
+
+        pwShowHide.forEach((icon) => {
+            icon.addEventListener("click", () => {
+                let getPwInput = icon.parentElement.querySelector("input");
+                if (getPwInput.type === "password") {
+                    getPwInput.type = "text";
+                    icon.classList.replace("uil-eye-slash", "uil-eye");
+                } else {
+                    getPwInput.type = "password";
+                    icon.classList.replace("uil-eye", "uil-eye-slash");
+                }
+            });
+        });
+
+        document.getElementById("button_login").addEventListener("click", () => {
+            // (دخول بالبيانات الموجده مسبقا) تسجيل الدخول
+            axios.post('https://reqres.in/api/login',
+                {
+                    "email": emailLogin,
+                    "password": passwordLogin
+                }).then(function (response) {
+                    let token = response.data.token;
+
+                    localStorage.setItem("token", token)
+                    const existingUser = emailLogin.find(u => u.email !== emailLogin);
+                    if (existingUser) {
+                        alert("Missing password");
+                        console.log("Missing password")
+                    }
+
+                    console.log("Token received ", token);
+                }).catch(error => {
+                    console.log(error);
+                    alert(error.response.data.error)
+                })
+        })
+
+    </script>
+</body>
+
+</html>
